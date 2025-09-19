@@ -1,6 +1,8 @@
 
 #include <iostream>
 #include <cstring>   // for strlen, strcpy
+#include <string>
+
 
 // TODO: function prototypes
 void addStudent(char* name, double gpa, char* names[], double gpas[], int &size, int capacity);
@@ -39,7 +41,7 @@ void printStudent(const char* name, const double& gpa){
 // TODO: implement averageGPA
 double averageGPA(const double gpas[], int size){
 	if(size <= 0){
-		throw "error at averageGPA: size of gpas[] must be larger than zero";
+		throw "No students";
 	}
 
 	double sum = 0;
@@ -70,7 +72,8 @@ int main(int argc, char* argv[]) {
         std::cout << "5. Quit\n";
         std::cout << "Enter choice: ";
         std::cin >> choice;
-
+	
+	std::cin.ignore();
         switch (choice) {
             case 1: {
                 // TODO: implement menu logic
